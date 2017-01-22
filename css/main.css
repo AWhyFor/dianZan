@@ -1,0 +1,80 @@
+.box{
+    position: relative;
+    padding-top: 76.041px;
+}
+
+.picture{
+    width: 100%;
+    height: 279.166px;
+}
+
+.img-show{
+    overflow: scroll;
+}
+
+.person-info{
+    position: absolute;
+    width: 100%;
+    height: 93.75px;
+    top: 302.083px;
+}
+
+.person-info-name{
+    float: right;
+    color: white;
+    position: relative;
+    font-size: 15.625px;
+    top: 22.395px;
+}
+
+.person-info-headpic{
+    width: 83.333px;
+    height: 83.333px;
+    float: right;
+    background-color: white;
+    margin: 0px 12.5px 0px 13.541px;
+    padding: 3px;
+    border: 1px solid #bfbfbf;
+}
+
+.words{
+    width: 100%;
+    height: 311.458px;
+    margin-top: 38.541px;
+    position: relative;
+}
+
+.words-single{
+    margin: 12.5px 12.5px 9.895px 12.5px;
+}
+
+.words-headpic{
+    float: left;
+    width: 43.75px;
+    height: 43.75px;
+    margin-right: 8.854px;
+}
+
+.words-right{
+    width: 60%;
+    float: left;
+
+}
+
+.words-name{
+
+}
+
+.words-essay{
+
+}
+
+.words-picture{
+    width: 84px;
+    height: 84px;
+    margin: 0px 17px 0px 24px;
+}
+
+.words-url{
+
+}
