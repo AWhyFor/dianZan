@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<view class="ctn">
+  <div class="box">
+      <div class="picture img-show">
+          <img src="../img/noname2.jpg" alt="" class="" />
+      </div>
+      <div class="person-info">
+          <div class="person-info-headpic img-show">
+              <img src="../img/me2.jpg" alt="" class="" />
+          </div>
+          <div class="person-info-name">
+              <strong>船副</strong>
+          </div>
+      </div>
+      <div class="words">
+          <div class="words-single">
+              <div class="words-headpic img-show">
+                  <img src="../img/friend2.jpg" alt="" class="" />
+              </div>
+              <div class="words-right">
+                  <div class="words-name">
+                      <span>纳格休斯</span>
+                  </div>
+                  <div class="words-essay">
+                      <span>之前看过这个博主写的一篇关于双子座的那会儿觉得他瞎几把扯淡一点都不像但这篇还是挺准的</span>
+                  </div>
+                  <div class="words-picture">
+
+                  </div>
+                  <div class="words-url">
+
+                  </div>
+                  <div class="words-footer">
+                      <div class="words-footer">
+                          <div class="words-footer-timeago">
+                              <span>5分钟前</span>
+                          </div>
+                          <div class="words-footer-comment">
+                              
+                          </div>
+                      </div>
+                  </div>
+                  <div class="words-like">
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</view>

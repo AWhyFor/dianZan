@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/show/index",
+    "pages/setting/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#3b3d3c",
+    "navigationBarTitleText": "点赞狂魔",
+    "navigationBarTextStyle":"#fff"
+  }
+}
