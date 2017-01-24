@@ -1,38 +1,42 @@
-.box{
+.box {
     position: relative;
     padding-top: 76px;
     background-color: #393a3f;
 }
+
 .box div {
-  display: block;
+    display: block;
 }
 
-.picture{
+.picture {
     width: 100%;
     height: 280px;
 }
 
-.img-show{
-    overflow: hidden;
+.img-show {
+    width: 100%;
+    height: 100%;
 }
 
-.person-info{
-    position: absolute;
+.person-info {
+    position: relative;
+    float: right;
     width: 100%;
     height: 88px;
-    top: 302px;
+    /*top: 302px;*/
+    margin-top: -54px;
     z-index: 99;
 }
 
-.person-info-name{
-    float: right;  
+.person-info-name {
+    float: right;
     color: white;
     position: relative;
     font-size: 15px;
     top: 22px;
 }
 
-.person-info-headpic{
+.person-info-headpic {
     width: 85px;
     height: 85px;
     float: right;
@@ -42,57 +46,102 @@
     border: 1px solid #bfbfbf;
 }
 
-.words{
+.words {
     width: 100%;
-    height: 302px;
+    height: auto;
     padding-top: 38px;
     position: relative;
     background-color: #f8f8f8;
 }
 
-.words-single{
-    margin: 12px 12px 9px 12px; 
+.words-single {
+    margin: 12px 12px 9px 12px;
     font-family: '微软雅黑';
     font-size: 15px;
+    overflow: hidden;
 }
 
-.words-headpic{
+.words-headpic {
     float: left;
     width: 45px;
     height: 45px;
     margin-right: 8px;
 }
 
-.words-right{
+.words-right {
     width: 298px;
     float: left;
 }
 
-.words-name{
+.words-name {
     color: #4b618e;
     position: relative;
     margin-top: 2px;
 }
 
-.words-essay{
+.words-essay {
     margin: 5px 0px 13px 0px;
 }
 
-.words-picture{
+.words-picture {
     margin-bottom: 14px;
+    max-width: 276px;
+    max-height: 276px;
+    overflow: hidden;
 }
 
-.words-url{
+.words-picture--four {
+    width: 184px;
+    height: 184px;
+}
+
+.words-picture--one {
+    width: 276px;
+    height: 276px;
+}
+
+.words-picture-single--ecptone {
+    margin: 1px;
+    width: 90px;
+    height: 90px;
+    float: left;
+}
+
+.words-picture-single--one {
+
+}
+
+.words-url {
     margin-bottom: 14px;
     height: 52px;
     background-color: #ececec;
 }
 
-.words-footer{
+.words-url-img {
+    width: 44px;
+    height: 44px;
+    float: left;
+    margin: 4px;
+}
+
+.words-url-text {
+    font-size: 12px;
+    font-family: '微软雅黑';
+    margin-top: 8px;
+    float: left;
+}
+
+.words-footer {
     height: 19px;
 }
 
-.words-footer-timeago{
+.words-footer-timeago {
     font-size: 13px;
     float: left;
+}
+
+.grayline{
+    background-color: #d2d2d2;
+    width: 100%;
+    height: 2px;
 }
