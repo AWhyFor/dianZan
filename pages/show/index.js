@@ -13,8 +13,7 @@ Page({
             text: '测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试',
             imgs: [],
             link: {
-                img: '../../img/url.jpg',
-                text: '链接中的文字'
+                
             },
             timeago:'鬼知道他多久之前',
             likes: ['王二麻子', '路人甲'],
@@ -30,7 +29,7 @@ Page({
         }, {
             name: '迷之老大',
             avatar: '../../img/friend2.jpg',
-            text: '测试',
+            text: '',
             imgs: ['../../img/wideImg.jpg','../../img/smallImg2.jpg','../../img/smallImg5.jpg','../../img/smallImg6.jpg'],
             link: {
                 img: '../../img/url.jpg',

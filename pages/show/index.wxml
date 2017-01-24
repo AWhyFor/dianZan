@@ -42,7 +42,7 @@
                                 <span></span>
                             </div>
                         </block>
-                        <div class="words-picture">
+                        <div wx:if="{{friend.imgs.length > 0}}" class="words-picture">
                             <block wx:if="{{friend.imgs.length == 1}}">
                                 <div class="words-picture--one">
                                     <image src="{{friend.imgs[0]}}" class="img-show"></image>
@@ -65,13 +65,16 @@
                                 </block>
                             </block>
                         </div>
-                        <div class="words-url">
+                        <div wx:if="{{true}}" class="words-url">
                             <div class="words-url-img">
                                 <image src="{{friend.link.img}}" alt="" class="img-show"/>                            
                             </div>
                             <div class="words-url-text">
                                 <span>{{friend.link.text}}</span>
                             </div>
+                        </div>
+                        <div class="words-position">
+
                         </div>
                         <div class="words-footer">
                             <div class="words-footer">
