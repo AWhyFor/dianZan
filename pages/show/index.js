@@ -92,5 +92,10 @@ Page({
         this.setData({
             lists: random.getLists()
         })
+    },
+    refresh: function() {
+        this.setData({
+            lists: random.getLists()
+        })
     }
 })

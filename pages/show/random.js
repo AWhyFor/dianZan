@@ -1,25 +1,44 @@
+var data = require('./data');
+var util = require('../../utils/util.js');
+
+// 生成一个元素
+function getItem() {
+    var item = Object.assign({}, util.randomArr(data.contents));
+    item.name = util.randomArr(data.names);
+    item.avatar = util.randomArr(data.avatars);
+    item.timeago = '写死的一百年';
+
+    var commentsCount = util.randomInt(0, 5);
+    var comments = [];
+    for (var i = 0; i < commentsCount ; i++) {
+        comments.push({
+            name: util.randomArr(data.names),
+            to: util.randomInt(0, 1) === 0,
+            text: util.randomArr(data.comments)
+        });
+    }
+    item.comment = comments;
+
+    // 点赞
+    var likesCount = util.randomInt(0, 30);
+    var likes = [];
+    for (var i = 0; i < likesCount ; i++) {
+        likes.push(util.randomArr(data.names));
+    }
+    item.likes = likes;
+    return item;
+}
+
+// 将多个元素组装成列表
 function getLists() {
-	return [{
-        name: '纳格休斯二大爷233',
-        avatar: '../../img/friend2.jpg',
-        text: '测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试',
-        imgs: [],
-        link: {
-            img: '../../img/url.jpg',
-            text: '链接中的文字'
-        },
-        timeago:'鬼知道他多久之前',
-        likes: ['王二麻子', '路人甲'],
-        comment: [{
-            name: '王二麻子',
-            to: '大锤',
-            text: '666'
-        }, {
-            name: '路人甲',
-            to: '',
-            text: '233'
-        }]
-    }]
+    // 朋友圈条数
+    var count = util.randomInt(0, 10);
+    var arr = [];
+    for (var i = 0; i < count ; i++) {
+        arr.push(getItem());
+    }
+    console.log(arr);
+	return arr;
 }
 
 module.exports = {
