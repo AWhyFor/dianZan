@@ -1,10 +1,12 @@
 //index.js
 //获取应用实例
+var random = require('./random');
 var app = getApp()
+
 Page({
     data: {
         name: '船副',
-        avatar: '../../img/me2.jpg',
+        avatar: '../../img/me.jpg',
         say: 'hiaidoa',
         bgimg: '../../img/smallImg1.jpg',
         lists: [{
@@ -70,11 +72,31 @@ Page({
         }]
     },
     onLoad: function() {
-        this.setData({
-            say: 'hello'
+        var self = this;
+        wx.login({
+            success: function () {
+                wx.getUserInfo({
+                    success: function (res) {
+                        self.setData({
+                            name: res.userInfo.nickName,
+                            avatar: res.userInfo.avatarUrl
+                        })
+                    }
+                })
+            }
         })
     },
     getData: function() {
         var self = this;
+    },
+    onPullDownRefresh: function(){
+        this.setData({
+            lists: random.getLists()
+        })
+    },
+    refresh: function() {
+        this.setData({
+            lists: random.getLists()
+        })
     }
 })
