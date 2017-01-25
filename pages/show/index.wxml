@@ -82,7 +82,7 @@
                                     <span>{{friend.timeago}}</span>
                                 </div>
                                 <div class="words-footer-comment">
-
+                                    
                                 </div>
                             </div>
                         </div>
