@@ -35,6 +35,10 @@ page {
   display: block;
 }
 
+.page__bd textarea {
+  height: 100px;
+}
+
 .page__title {
     text-align: left;
     font-size: 20px;

@@ -11,7 +11,7 @@
         </div>
         <div class="person-info">
             <div class="person-info-headpic">
-                <image src="{{avatar}}" alt="" class="img-show" bindtap="refresh"/>
+                <image src="{{avatar}}" alt="" class="img-show"/>
             </div>
             <div class="person-info-name">
                 <strong>{{name}}</strong>

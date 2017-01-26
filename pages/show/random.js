@@ -85,6 +85,7 @@ function getLists() {
     for (var i = 0; i < count ; i++) {
         arr.push(getItem(timearr));
     }
+    console.log(arr);
 	return arr;
 }
 

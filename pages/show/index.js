@@ -6,9 +6,6 @@ var app = getApp()
 
 Page({
     data: {
-        name: '船副',
-        avatar: '../../img/me.jpg',
-        say: 'hiaidoa',
         bgimg: '../../img/noname2.jpg',
         lists: [],
         // 不涉及视图渲染的逻辑型数值
@@ -17,6 +14,12 @@ Page({
     },
     getData: function() {
         var self = this;
+    },
+    onLoad: function() {
+        wx.showToast({
+            title: '下拉可刷新其他朋友圈数据',
+            duration: 1000
+        });
     },
     onShow: function () {
       this.setData({
@@ -45,16 +48,16 @@ Page({
             lists: lists
         })
     },
-    onPullDownRefresh: function(){
+    onPullDownRefresh: function() {
+        wx.stopPullDownRefresh();
+        wx.showToast({
+            title: '已刷新其他朋友圈数据',
+            duration: 1000
+        });
+        // 置空，否则图片不会执行onload
         this.setData({
-            lists: random.getLists(),
-            logicImageCount: 0
+          lists: []
         })
-    },
-    refresh: function() {
-        this.setData({
-            lists: random.getLists(),
-            logicImageCount: 0
-        })
+        this.onShow();
     }
 })
