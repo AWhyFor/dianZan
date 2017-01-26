@@ -7,12 +7,7 @@ function getItem(timearr) {
     item.name = util.randomArr(data.names);
     item.avatar = util.randomArr(data.avatars);
     item.timeago = util.randomRedxArr(timearr);
-
-    if(item.text.length > 12) {
-        item.textlength = 120;  //暂时写死120为了看效果
-        item.text = item.text.slice(0,12) + "..."; 
-    }
-
+    
     var commentsCount = util.randomInt(0, 5);
     var comments = [];
     for (var i = 0; i < commentsCount ; i++) {
@@ -30,10 +25,6 @@ function getItem(timearr) {
     for (var i = 0; i < likesCount ; i++) {
         likes.push(util.randomArr(data.names));
     }
-    if(likes.length > 10) {
-        likes = likes.join('，') + "...等" + likes.length + "人觉得很赞"; 
-    }
-    item.likes = likes;
     return item;
 }
 
