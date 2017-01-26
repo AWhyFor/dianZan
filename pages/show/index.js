@@ -15,6 +15,12 @@ Page({
     getData: function() {
         var self = this;
     },
+    onLoad: function() {
+        wx.showToast({
+            title: '下拉可刷新其他朋友圈数据',
+            duration: 1000
+        });
+    },
     onShow: function () {
       this.setData({
         lists: random.getLists(),
@@ -42,10 +48,16 @@ Page({
             lists: lists
         })
     },
-    onPullDownRefresh: function(){
-        this.onShow();
-    },
-    refresh: function() {
+    onPullDownRefresh: function() {
+        wx.stopPullDownRefresh();
+        wx.showToast({
+            title: '已刷新其他朋友圈数据',
+            duration: 1000
+        });
+        // 置空，否则图片不会执行onload
+        this.setData({
+          lists: []
+        })
         this.onShow();
     }
 })
