@@ -27,19 +27,20 @@
                         <div class="words-name">
                             <span>{{friend.name}}</span>
                         </div>
-                        <block wx:if="{{friend.text.length < 120}}">
+                        <block wx:if="{{friend.text.length <= 113}}">
                             <div class="words-essay">
                                 <span >{{friend.text}}</span>
                             </div>
                         </block>
-                        <block wx:elif="{{friend.text.length < 200}}">
-                            <div class="words-essay">
-                                <span >{{friend.text}}</span>
+                        <block wx:elif="{{friend.text.length <= 115}}">
+                            <div class="words-essay--long">
+                                <span>{{friend.text}}</span>
                             </div>
+                            <span style="color: #3c5385;">全文</span>
                         </block>
                         <block wx:else>
-                            <div class="words-essay--long">
-                                <span></span>
+                            <div class="words-essay--verylong">
+                                <span>{{friend.text}}</span>
                             </div>
                         </block>
                         <div wx:if="{{friend.imgs.length > 0}}" class="words-picture">
@@ -65,7 +66,7 @@
                                 </block>
                             </block>
                         </div>
-                        <div wx:if="{{true}}" class="words-url">
+                        <div wx:if="{{!friend.link.img && !friend.link.text}}" class="words-url">
                             <div class="words-url-img">
                                 <image src="{{friend.link.img}}" alt="" class="img-show"/>                            
                             </div>

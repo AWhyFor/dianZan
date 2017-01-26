@@ -1,0 +1,22 @@
+{
+  "name": "dianzan",
+  "version": "0.0.1",
+  "description": "dianzan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AWhyFor/dianZan.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AWhyFor/dianZan/issues"
+  },
+  "homepage": "https://github.com/AWhyFor/dianZan#readme",
+  "dependencies": {
+    "text-ellipsis": "^1.0.3"
+  }
+}

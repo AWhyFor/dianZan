@@ -82,7 +82,29 @@
 }
 
 .words-essay {
+    width: 100%;
     margin: 5px 0px 5px 0px;
+}
+
+.words-essay--long {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    margin: 5px 0px 5px 0px;
+}
+
+.words-essay--verylong {
+    width: 298px;
+    height: 28px;
+    padding: 10px 2px 0px 2px;
+    font-size: 14px;
+    margin: 5px 0px 5px 0px;
+    background-color: #ececec;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: box;
+    line-clamp: 2;
+    box-orient: vertical;
 }
 
 .words-picture {

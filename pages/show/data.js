@@ -1,5 +1,5 @@
 // 用户名
-var names = ['王二麻子', '路人甲', '222', '333'];
+var names = ['王二麻子', '路人甲', '长者', '香港记者','华莱士','蛤蛤'];
 // 用户头像
 var avatars = ['../../img/friend2.jpg', '../../img/me.jpg'];
 // 背景
@@ -32,11 +32,14 @@ var contents = [{
 	// 图片
 	imgs: ['../../img/friend2.jpg', '../../img/me.jpg']
 }];
+//时间
+var times = ['1分钟前','3分钟前','5分钟前','11分钟前','17分钟前','半小时前','49分钟前','56分钟前','1小时前','2小时前','5小时前','两天前','三天前','一个月前','一百年前','宇宙的起源'];
 
 module.exports = {
 	names: names,
 	avatars: avatars,
 	bgs: bgs,
 	comments: comments,
-	contents: contents
+	contents: contents,
+	times: times
 }
