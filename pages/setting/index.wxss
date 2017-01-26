@@ -22,22 +22,8 @@ page {
 .cell:last-child {
   margin-bottom: 20px;
 }
-
 .cell-slider {
   margin: 0;
-}
-.radio-group {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 14px;
-}
-.radio-group .radio {
-  width: 33.333%;
-  margin: 5px 0;
-}
-.radio-group div {
-  display: block;
-  width: 100%;
 }
 
 .page__hd {
@@ -69,9 +55,4 @@ page {
     color: #888;
     text-align: left;
     font-size: 14px;
-}
-
-.radio-group wx-div.radio-wrap {
-  display:flex;
-  flex-wrap:wrap;
 }

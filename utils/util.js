@@ -11,7 +11,7 @@ module.exports = {
 		return arr[this.randomInt(0, arr.length - 1)];
 	},
 	//从某个数组里取出并删除这个元素，并且把该元素之前的元素都删除
-	randomTimeago: function(arr) {
+	randomRedxArr: function(arr) {
 		arr = arr || [];
 		for (var i = 0; i < this.randomInt(0, 2); i++) {
 			arr.shift();

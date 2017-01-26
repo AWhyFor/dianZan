@@ -6,8 +6,12 @@ function getItem(timearr) {
     var item = Object.assign({}, util.randomArr(data.contents));
     item.name = util.randomArr(data.names);
     item.avatar = util.randomArr(data.avatars);
-    item.timeago = util.randomTimeago(timearr);
-    
+    item.timeago = util.randomRedxArr(timearr);
+
+    if(item.text.length > 12) {
+        item.textlength = 120;  //暂时写死120为了看效果
+        item.text = item.text.slice(0,12) + "..."; 
+    }
 
     var commentsCount = util.randomInt(0, 5);
     var comments = [];
