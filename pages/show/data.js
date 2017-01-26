@@ -9,8 +9,6 @@ var comments = ['666', '什么活动？', 'wtf?'];
 // 正文
 var contents = [{
 	// 链接
-<<<<<<< HEAD
-	link: {},
 	link: {
 		show: true,
 		img: '../../img/url.jpg',

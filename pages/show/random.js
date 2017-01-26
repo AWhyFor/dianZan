@@ -37,11 +37,47 @@ function getItem(timearr) {
     return item;
 }
 
+// 获取自己的元素
+function getSelfItem() {
+    // 从存储取数据
+    var text = wx.getStorageSync('text') || '';
+    var zan = wx.getStorageSync('zan') || 30;
+    var commentsCount = wx.getStorageSync('comment') || 5;;
+    var images = wx.getStorageSync('images') || 0;
+    var item = {
+        text: text,
+        imgs: images,
+        link: {},
+        name: wx.getStorageSync('name'),
+        avatar: wx.getStorageSync('avatar'),
+        timeago: '5分钟前'
+    };
+
+    var comments = [];
+    for (var i = 0; i < commentsCount ; i++) {
+        comments.push({
+            name: util.randomArr(data.names),
+            to: util.randomInt(0, 1) === 0,
+            text: util.randomArr(data.comments)
+        });
+    }
+    item.comment = comments;
+
+    var likes = [];
+    for (var i = 0; i < zan ; i++) {
+        likes.push(util.randomArr(data.names));
+    }
+    if(likes.length > 10) {
+        likes = likes.join('，') + "...等" + likes.length + "人觉得很赞"; 
+    }
+    item.likes = likes;
+    return item;
+}
 // 将多个元素组装成列表
 function getLists() {
     // 朋友圈条数
     var count = util.randomInt(0, 4);
-    var arr = [];
+    var arr = [getSelfItem()];
     var timearr = [];
     for(var i=0 ; i < data.times.length ; i++) {
         timearr[i] = data.times[i];
@@ -49,7 +85,6 @@ function getLists() {
     for (var i = 0; i < count ; i++) {
         arr.push(getItem(timearr));
     }
-    console.log(arr);
 	return arr;
 }
 

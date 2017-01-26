@@ -18,6 +18,14 @@
   	  </div>
   	</div>
   	<div class="cell">
+  	  <div class="page__hd">
+  	    <p class="page__title">评论数量</p>
+  	  </div>
+  	  <div class="page__bd">
+  	    <slider class="cell-slider" bindchange="commentChange" left-icon="cancel" right-icon="success_no_circle" value="{{comment}}" min="0" max="30" show-value="true"/>
+  	  </div>
+  	</div>
+  	<div class="cell">
   		<button type="primary" bindtap="chosePics" hover-class="other-button-hover"> 选择照片 </button>
   	</div>
   </scroll-view>

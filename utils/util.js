@@ -30,7 +30,6 @@ module.exports = {
 			autoHeight = 0;
 		var results = {};
 
-		console.log(originalWidth, originalHeight)
 		wx.getSystemInfo({
 			success: function(res) {
 				windowWidth = w || res.windowWidth;

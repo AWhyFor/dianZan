@@ -3,7 +3,8 @@
 var app = getApp()
 Page({
   data: {
-  	zan: 30
+  	zan: 30,
+  	comment: 5
   },
   textChange: function(e) {
   	wx.setStorage({
@@ -17,6 +18,12 @@ Page({
   	  data: e.detail.value
   	})
   },
+  commentChange: function(e) {
+  	wx.setStorage({
+  	  key: 'comment',
+  	  data: e.detail.value
+  	})
+  },
   chosePics: function() {
   	wx.chooseImage({
   		count: 1, // 默认9
@@ -27,12 +34,31 @@ Page({
 			var tempFilePaths = res.tempFilePaths;
 			wx.setStorage({
 			  key: 'images',
-			  data: res.tempFilePaths;
+			  data: res.tempFilePaths
 			})
 			wx.navigateTo({
 				url: '../show/index'
 			})
 		}
   	})
+  },
+  onLoad: function() {
+      var self = this;
+      wx.login({
+          success: function () {
+              wx.getUserInfo({
+                  success: function (res) {
+                      wx.setStorage({
+                          key: 'name',
+                          data: res.userInfo.nickName
+                      })
+                      wx.setStorage({
+                          key: 'avatar',
+                          data: res.userInfo.avatarUrl
+                      })
+                  }
+              })
+          }
+      })
   }
 })
