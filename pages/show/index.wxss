@@ -18,6 +18,16 @@
     height: 100%;
 }
 
+.img-icon-comment {
+    width: 18px;
+    height: 12px;
+}
+.img-icon-like {
+    width: 12px;
+    height: 10px;
+    margin-right: 5px;
+}
+
 .person-info {
     position: relative;
     float: right;
@@ -99,7 +109,6 @@
     padding: 10px 2px 0px 2px;
     font-size: 14px;
     margin: 5px 0px 5px 0px;
-    background-color: #ececec;
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
@@ -165,6 +174,9 @@
     font-size: 12px;
     color: #808080;
     float: left;
+}
+.words-footer-comment {
+    float: right;
 }
 
 .words-social {

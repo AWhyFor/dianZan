@@ -18,7 +18,7 @@ Page({
     onLoad: function() {
         wx.showToast({
             title: '下拉可刷新其他朋友圈数据',
-            duration: 1000
+            duration: 3500
         });
     },
     onShow: function () {
@@ -27,7 +27,10 @@ Page({
         logicImageCount: 0,
         name: wx.getStorageSync('name'),
         avatar: wx.getStorageSync('avatar')
-      })
+      });
+      wx.setNavigationBarTitle({
+        title: '朋友圈'
+      });
     },
     // 图片加载
     imageLoad: function(img) {
