@@ -4,38 +4,80 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
         <style>
-            .showImg{
-                /*width: 200px;
-                height: 200px;*/
-                max-width: 200px;
-                max-height: 200px;
+            .bgimg {
+                z-index: -1;
+                position: fixed;
+                top: 100px;
+                width: 100%;
+                height: auto;
             }
-            .word{
-                width: 100px;
-                height: 20px;
-                max-width: 100px;
-                max-height: 20px;
+
+            .img-show {
+                width: 100%;
+                height: 100%;
+            }
+
+            .header {
+                width: 100%;
+                height: 150px;
+                position: fixed;
+                background-color: #676060;
+                z-index: 99;
+            }
+
+            .word {
+                font-family: '微软雅黑';
+                font-size: '20px';
+            }
+
+            .container {
+                position: relative;
+                top: 150px;
+            }
+
+            .box1 {
+                position: relative;
+                background-color: #d80b37;
+                width: 100%;
+                height: 400px;
+                margin-bottom: 300px;
+            }
+
+            .box2 {
+                position: relative;
+                background-color: #3838ad;
+                width: 100%;
+                height: 400px;
+                margin-bottom: 300px;
+            }
+
+            .box3 {
+                position: relative;
+                background-color: #d80b37;
+                width: 100%;
+                height: 400px;
+                margin-bottom: 300px;
             }
         </style>
-        <script>
-            var cout = 4;
-            var arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
-            
-            for(var i = 0;i < cout; i++) {
-                arr.shift();
-            }
-            console.log(arr.splice(cout,1));
-            console.log(arr);
-        </script>
     </head>
     <body>
-        <div class="showImg">
-            <img src="wideImg.jpg" alt="" class="" style="width: 100%;height: 100%;">
+        <div class="bgimg">
+            <img src="noname.jpg" alt="" class="img-show">
         </div>
-        <div class="word">
-            <span>敬爱的就来家物流人天POI看破他进口店铺外UI天涯网敬爱的就来家物流人天POI看破他进口店铺外UI天涯网敬爱的就来家物流人天POI看破他进口店铺外UI天涯网</span>
+        <div class="header">
+            <h1>导航栏</h1>
+        </div>
+        <div class="container">
+            <div class="box1">
+                <h3>正文1</h3>
+            </div>
+            <div class="box2">
+                <h3>正文2</h3>
+            </div>
+            <div class="box3">
+                <h3>正文3</h3>
+            </div>
         </div>
     </body>
 </html>
