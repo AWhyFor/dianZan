@@ -48,7 +48,17 @@ module.exports = {
 				}
 			}
 		})
-
 		return results;
+	},
+	//输入毫秒输出时间差
+	getTime: function(time) {
+		if(time < 3600000)
+			return (Math.round(time/60/1000)).toString()+"分钟前";
+		else if(time < 86400000)
+			return (Math.round(time/24/60/1000)).toString()+"小时前";
+		else if(time < 2592000000)
+			return (Math.round(time/30/24/60/1000)).toString()+"天前";
+		else
+			return (Math.round(time/12/30/24/60/1000)).toString()+"年前";
 	}
 }

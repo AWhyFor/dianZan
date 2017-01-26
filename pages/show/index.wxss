@@ -22,6 +22,7 @@
     width: 18px;
     height: 12px;
 }
+
 .img-icon-like {
     width: 12px;
     height: 10px;
@@ -107,9 +108,10 @@
     width: 298px;
     height: 28px;
     padding: 10px 2px 0px 2px;
-    font-size: 14px;
+    font-size: 15px;
     margin: 5px 0px 5px 0px;
     overflow:hidden;
+    background-color: #ececec;
     text-overflow:ellipsis;
     white-space:nowrap;
     line-clamp: 2;
@@ -188,7 +190,7 @@
 
 .words-social-like {
     height: 17px;
-    padding: 10px 8px 7px 8px;
+    padding: 8px 8px 7px 8px;
     font-size: 14px;
     color: #3c5385;
     overflow:hidden;

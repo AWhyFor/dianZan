@@ -2,12 +2,12 @@ var data = require('./data');
 var util = require('../../utils/util.js');
 
 // 生成一个元素
-function getItem(timearr) {
+function getItem(time) {
     var item = Object.assign({}, util.randomArr(data.contents));
     item.name = util.randomArr(data.names);
     item.avatar = util.randomArr(data.avatars);
-    item.timeago = util.randomRedxArr(timearr);
-    
+    item.timeago = util.getTime(time);
+
     var commentsCount = util.randomInt(0, 5);
     var comments = [];
     for (var i = 0; i < commentsCount ; i++) {
@@ -20,11 +20,12 @@ function getItem(timearr) {
     item.comment = comments;
 
     // 点赞
-    var likesCount = util.randomInt(20, 30);
+    var likesCount = util.randomInt(0, 10);
     var likes = [];
     for (var i = 0; i < likesCount ; i++) {
         likes.push(util.randomArr(data.names));
     }
+    item.likes = likes;
     return item;
 }
 
@@ -58,9 +59,6 @@ function getSelfItem() {
     for (var i = 0; i < zan ; i++) {
         likes.push(util.randomArr(data.names));
     }
-    if(likes.length > 10) {
-        likes = likes.join('，') + "...等" + likes.length + "人觉得很赞"; 
-    }
     item.likes = likes;
     return item;
 }
@@ -69,12 +67,9 @@ function getLists() {
     // 朋友圈条数
     var count = util.randomInt(0, 4);
     var arr = [getSelfItem()];
-    var timearr = [];
-    for(var i=0 ; i < data.times.length ; i++) {
-        timearr[i] = data.times[i];
-    }
-    for (var i = 0; i < count ; i++) {
-        arr.push(getItem(timearr));
+    for (var i = 0, time = 0; i < count ; i++) {
+        time += util.randomInt(300000,600000);
+        arr.push(getItem(time));
     }
     console.log(arr);
 	return arr;

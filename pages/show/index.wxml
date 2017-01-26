@@ -27,12 +27,12 @@
                         <div class="words-name">
                             <span>{{friend.name}}</span>
                         </div>
-                        <block wx:if="{{friend.text <= 113}}">
+                        <block wx:if="{{friend.text.length <= 113}}">
                             <div class="words-essay">
                                 <span >{{friend.text}}</span>
                             </div>
                         </block>
-                        <block wx:elif="{{friend.text <= 115}}">
+                        <block wx:elif="{{friend.text.length <= 150}}">
                             <div class="words-essay--long">
                                 <span>{{friend.text}}</span>
                             </div>
@@ -91,7 +91,11 @@
                             <block wx:if="{{friend.likes.length > 0}}">
                                 <div class="words-social-like">
                                     <image src="./icon_like.png" class="img-icon-like"/>
-                                    <span wx:key wx:for="{{friend.likes}}">{{item}}</span>
+                                    <!--<div class="words-social-like-name"></div>-->
+                                    <block wx:key wx:for="{{friend.likes}}">
+                                        <span wx:if="{{index != 0}}"> ,</span>
+                                        <span>{{item}}</span>
+                                    </block>
                                 </div>
                                 <div class="grayline"></div>
                             </block>
