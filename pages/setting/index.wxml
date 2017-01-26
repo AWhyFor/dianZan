@@ -2,9 +2,6 @@
 <view class="ctn">
   <scroll-view scroll-y="true" style="height: 100%;">
   	<div class="cell">
-  		<div class="page__hd">
-  		  <p class="page__title">朋友圈内容</p>
-  		</div>
   		<div class="page__bd">
   			<textarea placeholder="这一刻的想法…" bindinput="textChange"></textarea>
   		</div>

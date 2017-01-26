@@ -6,9 +6,6 @@ var app = getApp()
 
 Page({
     data: {
-        name: '船副',
-        avatar: '../../img/me.jpg',
-        say: 'hiaidoa',
         bgimg: '../../img/noname2.jpg',
         lists: [],
         // 不涉及视图渲染的逻辑型数值
@@ -46,15 +43,9 @@ Page({
         })
     },
     onPullDownRefresh: function(){
-        this.setData({
-            lists: random.getLists(),
-            logicImageCount: 0
-        })
+        this.onShow();
     },
     refresh: function() {
-        this.setData({
-            lists: random.getLists(),
-            logicImageCount: 0
-        })
+        this.onShow();
     }
 })
