@@ -14,7 +14,7 @@ Page({
             name: '纳格休斯二大爷',
             avatar: '../../img/friend2.jpg',
             text: '测试测试测试测试测试测试测试测试测试测试测试测试测测试测试测试测试试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试大姨妈家二大爷和后也恍恍惚惚',
-            imgs: ['../../img/noname2.jpg'],
+            imgs: ['../../img/longImg.jpg'],
             link: {
                 
             },
@@ -96,10 +96,14 @@ Page({
     imageLoad: function(img) {
         var count = this.data.logicImageCount;
         var lists = this.data.lists;
+        var setCount = 0;
         lists.forEach((em) => {
-            if (em.imgs.length === 1) {
+            if (setCount === count) {
                 // 单张图片
-                em = Object.assign(em, utils.autoImage(img))
+                em = Object.assign(em, utils.autoImage(img, 200))
+            }
+            if (em.imgs.length === 1) {
+                setCount ++;
             }
         })
         this.setData({

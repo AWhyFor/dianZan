@@ -109,8 +109,6 @@
 .words-picture {
     margin-top: 8px;
     margin-bottom: 6px;
-    max-width: 276px;
-    max-height: 276px;
     overflow: hidden;
 }
 

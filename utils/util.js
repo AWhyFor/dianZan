@@ -19,7 +19,9 @@ module.exports = {
 		return arr.shift();
 	},
 	// 坑大跌微信不支持图片自适应还能玩？
-	autoImage: function(e) {
+	// e - 图片数据
+	// w - 强制宽度
+	autoImage: function(e, w) {
 		var originalWidth = e.detail.width;
 		var originalHeight = e.detail.height;
 		var windowWidth = 0,
@@ -28,10 +30,11 @@ module.exports = {
 			autoHeight = 0;
 		var results = {};
 
+		console.log(originalWidth, originalHeight)
 		wx.getSystemInfo({
 			success: function(res) {
-				windowWidth = res.windowWidth;
-				windowHeight = res.windowHeight;
+				windowWidth = w || res.windowWidth;
+				windowHeight = w ? (w * res.windowHeight / res.windowWidth) : res.windowHeight;
 				//判断按照那种方式进行缩放
 				if (originalWidth > windowWidth) { 
 					//在图片width大于手机屏幕width时候
