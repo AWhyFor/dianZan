@@ -55,10 +55,12 @@ module.exports = {
 		if(time < 3600000)
 			return (Math.round(time/60/1000)).toString()+"分钟前";
 		else if(time < 86400000)
-			return (Math.round(time/24/60/1000)).toString()+"小时前";
+			return (Math.round(time/60/60/1000)).toString()+"小时前";
 		else if(time < 2592000000)
-			return (Math.round(time/30/24/60/1000)).toString()+"天前";
+			return (Math.round(time/24/60/60/1000)).toString()+"天前";
+		else if(time < 31104000000)
+			return (Math.round(time/30/24/60/60/1000)).toString()+"个月前";
 		else
-			return (Math.round(time/12/30/24/60/1000)).toString()+"年前";
+			return "宇宙的起源";
 	}
 }

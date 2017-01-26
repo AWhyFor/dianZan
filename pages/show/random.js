@@ -65,10 +65,10 @@ function getSelfItem() {
 // 将多个元素组装成列表
 function getLists() {
     // 朋友圈条数
-    var count = util.randomInt(0, 4);
+    var count = util.randomInt(5, 10);
     var arr = [getSelfItem()];
     for (var i = 0, time = 0; i < count ; i++) {
-        time += util.randomInt(300000,600000);
+        time += util.randomInt(300000, 900000);
         arr.push(getItem(time));
     }
     console.log(arr);
