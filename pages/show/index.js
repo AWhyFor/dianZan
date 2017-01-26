@@ -13,9 +13,10 @@ Page({
             name: '纳格休斯二大爷',
             avatar: '../../img/friend2.jpg',
             text: '测试测试测试测试测试测试测试测试测试测试测试测试测测试测试测试测试试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试大姨妈家二大爷和后也恍恍惚惚',
+            textlength: 160,
             imgs: ['../../img/smallImg5.jpg'],
             link: {
-                
+                show: false
             },
             timeago:'鬼知道他多久之前',
             likes: ['王二麻子', '路人甲'],
@@ -32,8 +33,10 @@ Page({
             name: '迷之老大',
             avatar: '../../img/friend2.jpg',
             text: '',
+            textlength: 0,
             imgs: ['../../img/wideImg.jpg','../../img/smallImg2.jpg','../../img/smallImg5.jpg','../../img/smallImg6.jpg'],
             link: {
+                show: true,
                 img: '../../img/url.jpg',
                 text: '链接中的文字'
             },
@@ -52,8 +55,10 @@ Page({
             name: '迷之老大',
             avatar: '../../img/friend2.jpg',
             text: '测试',
+            textlength: 2,
             imgs: ['../../img/bigImg.jpg',],
             link: {
+                show: true,
                 img: '../../img/url.jpg',
                 text: '链接中的文字'
             },
