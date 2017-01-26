@@ -13,9 +13,40 @@ module.exports = {
 	//从某个数组里取出并删除这个元素，并且把该元素之前的元素都删除
 	randomTimeago: function(arr) {
 		arr = arr || [];
-		for(var i = 0; i < this.randomInt(0, 2) ; i++) {
+		for (var i = 0; i < this.randomInt(0, 2); i++) {
 			arr.shift();
 		}
 		return arr.shift();
+	},
+	// 坑大跌微信不支持图片自适应还能玩？
+	autoImage: function(e) {
+		var originalWidth = e.detail.width;
+		var originalHeight = e.detail.height;
+		var windowWidth = 0,
+			windowHeight = 0;
+		var autoWidth = 0,
+			autoHeight = 0;
+		var results = {};
+
+		wx.getSystemInfo({
+			success: function(res) {
+				windowWidth = res.windowWidth;
+				windowHeight = res.windowHeight;
+				//判断按照那种方式进行缩放
+				if (originalWidth > windowWidth) { 
+					//在图片width大于手机屏幕width时候
+					autoWidth = windowWidth;
+					autoHeight = (autoWidth * originalHeight) / originalWidth;
+					results.imageWidth = autoWidth;
+					results.imageheight = autoHeight;
+				} else { 
+					//否则展示原来的数据
+					results.imageWidth = originalWidth;
+					results.imageheight = originalHeight;
+				}
+			}
+		})
+
+		return results;
 	}
 }

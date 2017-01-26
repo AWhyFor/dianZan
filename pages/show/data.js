@@ -9,7 +9,7 @@ var comments = ['666', '什么活动？', 'wtf?'];
 // 正文
 var contents = [{
 	// 链接
-	link: null,
+	link: {},
 	// 内容
 	text: '二月，你好：）',
 	// 图片
@@ -26,7 +26,7 @@ var contents = [{
 	imgs: ['../../img/friend2.jpg', '../../img/me.jpg', '../../img/friend2.jpg', '../../img/me.jpg']
 }, {
 	// 链接
-	link: null,
+	link: {},
 	// 内容
 	text: '恭喜发财',
 	// 图片

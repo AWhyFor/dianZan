@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 var random = require('./random');
+var utils = require('../../utils/util');
 var app = getApp()
 
 Page({
@@ -13,7 +14,7 @@ Page({
             name: '纳格休斯二大爷',
             avatar: '../../img/friend2.jpg',
             text: '测试测试测试测试测试测试测试测试测试测试测试测试测测试测试测试测试试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试试测试测试测试测试测试测试测试测试测试测试测试测试大姨妈家二大爷和后也恍恍惚惚',
-            imgs: ['../../img/smallImg5.jpg'],
+            imgs: ['../../img/noname2.jpg'],
             link: {
                 
             },
@@ -68,7 +69,10 @@ Page({
                 to: '',
                 text: '233'
             }]
-        }]
+        }],
+        // 不涉及视图渲染的逻辑型数值
+        // 单张图片自适应计数
+        logicImageCount: 0
     },
     onLoad: function() {
         var self = this;
@@ -88,14 +92,31 @@ Page({
     getData: function() {
         var self = this;
     },
+    // 图片加载
+    imageLoad: function(img) {
+        var count = this.data.logicImageCount;
+        var lists = this.data.lists;
+        lists.forEach((em) => {
+            if (em.imgs.length === 1) {
+                // 单张图片
+                em = Object.assign(em, utils.autoImage(img))
+            }
+        })
+        this.setData({
+            logicImageCount: count + 1,
+            lists: lists
+        })
+    },
     onPullDownRefresh: function(){
         this.setData({
-            lists: random.getLists()
+            lists: random.getLists(),
+            logicImageCount: 0
         })
     },
     refresh: function() {
         this.setData({
-            lists: random.getLists()
+            lists: random.getLists(),
+            logicImageCount: 0
         })
     }
 })

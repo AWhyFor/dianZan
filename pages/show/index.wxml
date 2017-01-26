@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="words">
-            <block wx:for="{{lists}}" wx:for-item="friend">
+            <block wx:key wx:for="{{lists}}" wx:for-item="friend">
                 <div class="words-single">
                     <div class="words-headpic">
                         <image src="{{friend.avatar}}" alt="" class="img-show"/>
@@ -46,12 +46,12 @@
                         <div wx:if="{{friend.imgs.length > 0}}" class="words-picture">
                             <block wx:if="{{friend.imgs.length == 1}}">
                                 <div class="words-picture--one">
-                                    <image src="{{friend.imgs[0]}}" class="img-show"></image>
+                                    <image src="{{friend.imgs[0]}}" bindload="imageLoad" width="{{friend.imageWidth}}" style="width:{{friend.imageWidth}}px; height:{{friend.imageheight}}px"></image>
                                 </div>
                             </block>
                             <block wx:elif="{{friend.imgs.length == 4}}">
                                 <div class="words-picture--four">
-                                    <block wx:for="{{friend.imgs}}">
+                                    <block wx:key wx:for="{{friend.imgs}}">
                                         <div class="words-picture-single--ecptone">
                                             <image src="{{item}}" class="img-show"></image>
                                         </div>
@@ -59,7 +59,7 @@
                                 </div>
                             </block>
                             <block wx:else>
-                                <block wx:for="{{friend.imgs}}">
+                                <block wx:key wx:for="{{friend.imgs}}">
                                     <div class="words-picture-single--ecptone">
                                         <image src="{{item}}" class="img-show"></image>
                                     </div>
@@ -91,12 +91,12 @@
                             <block wx:if="{{friend.likes.length > 0}}">
                                 <div class="words-social-like">
                                     <span>❤ </span>
-                                    <span wx:for="{{friend.likes}}">{{item}}</span>
+                                    <span wx:key wx:for="{{friend.likes}}">{{item}}</span>
                                 </div>
                                 <div class="grayline"></div>
                             </block>
                             <div wx:if="{{friend.comment.length > 0}}" class="words-social-comment">
-                                <block wx:for="{{friend.comment}}">
+                                <block wx:key wx:for="{{friend.comment}}">
                                     <div class="words-social-comment-single">
                                         <span style="color:#3c5385;">{{item.name}}</span>
                                         <span>：{{item.text}}</span>

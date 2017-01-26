@@ -26,8 +26,9 @@ function getItem(timearr) {
     for (var i = 0; i < likesCount ; i++) {
         likes.push(util.randomArr(data.names));
     }
-    if(likes.length > 10)
-        likes = likes.slice(0,3) + "...等" + likes.length + "人觉得很赞"; 
+    if(likes.length > 10) {
+        likes = likes.join('，') + "...等" + likes.length + "人觉得很赞"; 
+    }
     item.likes = likes;
     return item;
 }
