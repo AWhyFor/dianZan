@@ -83,14 +83,14 @@
                                     <span>{{friend.timeago}}</span>
                                 </div>
                                 <div class="words-footer-comment">
-                                    
+                                    <image src="./icon_comment.png" class="img-icon-comment"/>
                                 </div>
                             </div>
                         </div>
                         <div class="words-social">
                             <block wx:if="{{friend.likes.length > 0}}">
                                 <div class="words-social-like">
-                                    <span>❤ </span>
+                                    <image src="./icon_like.png" class="img-icon-like"/>
                                     <span wx:key wx:for="{{friend.likes}}">{{item}}</span>
                                 </div>
                                 <div class="grayline"></div>

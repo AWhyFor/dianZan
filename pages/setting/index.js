@@ -41,6 +41,11 @@ Page({
 		}
   	})
   },
+  onShow: function() {
+  	wx.setNavigationBarTitle({
+  	  title: '点赞狂魔'
+  	})
+  },
   onLoad: function() {
       var self = this;
       wx.login({
