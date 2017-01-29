@@ -1,9 +1,4 @@
 <!--index.wxml-->
-<!--
-    未完成：
-        大图文字省略
-        三行文字省略
-        链接处两行文字省略-->
 <view class="ctn">
     <div class="box">
         <div class="picture">
