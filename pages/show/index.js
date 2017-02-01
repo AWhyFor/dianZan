@@ -7,10 +7,7 @@ var app = getApp()
 Page({
     data: {
         bgimg: '../../img/noname2.jpg',
-        lists: [],
-        // 不涉及视图渲染的逻辑型数值
-        // 单张图片自适应计数
-        logicImageCount: 0
+        lists: []
     },
     getData: function() {
         var self = this;
@@ -21,33 +18,22 @@ Page({
             duration: 3500
         });
     },
-    onShow: function () {
-      this.setData({
-        lists: random.getLists(),
-        logicImageCount: 0,
-        name: wx.getStorageSync('name'),
-        avatar: wx.getStorageSync('avatar')
-      });
-      wx.setNavigationBarTitle({
-        title: '朋友圈'
-      });
+    onShow: function() {
+        this.setData({
+            lists: random.getLists(),
+            name: wx.getStorageSync('name'),
+            avatar: wx.getStorageSync('avatar')
+        });
+        wx.setNavigationBarTitle({
+            title: '朋友圈'
+        });
     },
     // 图片加载
     imageLoad: function(img) {
-        var count = this.data.logicImageCount;
+        var idx = img.currentTarget.dataset.idx;
         var lists = this.data.lists;
-        var setCount = 0;
-        lists.forEach((em) => {
-            if (setCount === count) {
-                // 单张图片
-                em = Object.assign(em, utils.autoImage(img, 200))
-            }
-            if (em.imgs.length === 1) {
-                setCount ++;
-            }
-        })
+        lists[idx] = Object.assign(lists[idx], utils.autoImage(img, 200));
         this.setData({
-            logicImageCount: count + 1,
             lists: lists
         })
     },
@@ -59,7 +45,7 @@ Page({
         });
         // 置空，否则图片不会执行onload
         this.setData({
-          lists: []
+            lists: []
         })
         this.onShow();
     }

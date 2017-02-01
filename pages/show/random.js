@@ -71,7 +71,6 @@ function getLists() {
         time += util.randomInt(300000, 900000);
         arr.push(getItem(time));
     }
-    console.log(arr);
 	return arr;
 }
 

@@ -41,7 +41,7 @@
                         <div wx:if="{{friend.imgs.length > 0}}" class="words-picture">
                             <block wx:if="{{friend.imgs.length == 1}}">
                                 <div class="words-picture--one">
-                                    <image src="{{friend.imgs[0]}}" bindload="imageLoad" width="{{friend.imageWidth}}" style="width:{{friend.imageWidth}}px; height:{{friend.imageheight}}px"></image>
+                                    <image src="{{friend.imgs[0]}}" bindload="imageLoad" data-idx="{{index}}" style="width:{{friend.imageWidth}}px; height:{{friend.imageheight}}px"></image>
                                 </div>
                             </block>
                             <block wx:elif="{{friend.imgs.length == 4}}">
@@ -89,7 +89,7 @@
                                     <image src="./icon_like.png" class="img-icon-like"/>
                                     <!--<div class="words-social-like-name"></div>-->
                                     <block wx:key wx:for="{{friend.likes}}">
-                                        <span wx:if="{{index != 0}}"> ,</span>
+                                        <span wx:if="{{index != 0}}">，</span>
                                         <span class="color-blue">{{item}}</span>
                                     </block>
                                 </div>
