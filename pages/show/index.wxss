@@ -196,7 +196,7 @@
 
 .words-social-like {
     padding: 8px 8px 7px 8px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.5em;
 }
 
@@ -209,10 +209,10 @@
     width: 100%;
     height: auto;
     overflow: hidden;
+    font-size: 14px;
 }
 
 .words-social-comment-single {
-    font-size: 12px;
     font-family: '微软雅黑';
     margin: 0px 8px 7px 8px;
 }
