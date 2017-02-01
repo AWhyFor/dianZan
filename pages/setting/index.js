@@ -3,8 +3,9 @@
 var app = getApp()
 Page({
   data: {
-  	zan: 30,
-  	comment: 5
+  	zan: wx.getStorageSync('zan') || 30,
+  	comment: wx.getStorageSync('comment') || 5,
+    pics: wx.getStorageSync('images') || []
   },
   textChange: function(e) {
   	wx.setStorage({
@@ -21,25 +22,47 @@ Page({
   commentChange: function(e) {
   	wx.setStorage({
   	  key: 'comment',
-  	  data: e.detail.value
+  	  data: e.detail.value,
+      pics: []
   	})
   },
   chosePics: function() {
+    var self = this;
   	wx.chooseImage({
-		sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-		sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-		success: function (res) {
-			// 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-			var tempFilePaths = res.tempFilePaths;
-			wx.setStorage({
-			  key: 'images',
-			  data: res.tempFilePaths
-			})
-			wx.navigateTo({
-				url: '../show/index'
-			})
-		}
+  		sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+  		sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+  		success: function (res) {
+  			// 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+  			var tempFilePaths = res.tempFilePaths;
+        var storagePaths = self.data.pics;
+        var paths = storagePaths.concat(tempFilePaths);
+
+  			wx.setStorage({
+  			  key: 'images',
+  			  data: paths
+  			})
+  			self.setData({
+          pics: paths
+        })
+  		}
   	})
+  },
+  delPics: function(e) {
+    var idx = e.currentTarget.dataset.idx;
+    var storagePaths = this.data.pics;
+    storagePaths.splice(idx, 1);
+    wx.setStorage({
+      key: 'images',
+      data: storagePaths
+    })
+    this.setData({
+      pics: storagePaths
+    })
+  },
+  gotoShow: function() {
+    wx.navigateTo({
+      url: '../show/index'
+    })
   },
   onShow: function() {
   	wx.setNavigationBarTitle({

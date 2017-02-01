@@ -77,6 +77,7 @@
                                 <div class="words-footer-timeago">
                                     <span>{{friend.timeago}}</span>
                                 </div>
+                                <div class="words-footer-del color-blue" wx:if="{{index === 0}}">删除</div>
                                 <div class="words-footer-comment">
                                     <image src="./icon_comment.png" class="img-icon-comment"/>
                                 </div>
@@ -89,7 +90,7 @@
                                     <!--<div class="words-social-like-name"></div>-->
                                     <block wx:key wx:for="{{friend.likes}}">
                                         <span wx:if="{{index != 0}}"> ,</span>
-                                        <span>{{item}}</span>
+                                        <span class="color-blue">{{item}}</span>
                                     </block>
                                 </div>
                                 <div class="grayline"></div>

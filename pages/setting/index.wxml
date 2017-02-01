@@ -4,6 +4,18 @@
   	<div class="cell">
   		<div class="page__bd">
   			<textarea placeholder="这一刻的想法…" bindinput="textChange"></textarea>
+        <ul class="pic-ul">
+          <li class="pic-li" wx:key wx:for="{{pics}}" bindtap="delPics" data-idx="{{index}}">
+            <image src="{{item}}"></image>
+            <div class="del-wrap">
+              <image src="./icon_del.png"></image>
+            </div>
+          </li>
+          <li class="pic-li" bindtap="chosePics">+</li>
+          <!-- 多加2个弥补flex缺陷 -->
+          <li class="pic-li empty"></li>
+          <li class="pic-li empty"></li>
+        </ul>
   		</div>
   	</div>
   	<div class="cell">
@@ -23,7 +35,7 @@
   	  </div>
   	</div>
   	<div class="cell">
-  		<button type="primary" bindtap="chosePics" hover-class="other-button-hover"> 选择照片 </button>
+  		<button type="primary" bindtap="gotoShow" hover-class="other-button-hover"> 确定 </button>
   	</div>
   </scroll-view>
 </view>

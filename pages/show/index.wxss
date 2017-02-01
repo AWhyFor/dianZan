@@ -1,3 +1,7 @@
+.color-blue {
+    color: #3c5385;
+}
+
 .box {
     position: relative;
     padding-top: 76px;
@@ -95,6 +99,7 @@
 .words-essay {
     width: 100%;
     margin: 5px 0px 5px 0px;
+    line-height: 1.3em;
 }
 
 .words-essay--long {
@@ -176,6 +181,7 @@
     font-size: 12px;
     color: #808080;
     float: left;
+    margin-right: 12px;
 }
 .words-footer-comment {
     float: right;
@@ -189,15 +195,15 @@
 }
 
 .words-social-like {
-    height: 17px;
     padding: 8px 8px 7px 8px;
     font-size: 14px;
-    color: #3c5385;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
+    line-height: 1.5em;
 }
 
+.words-footer-del {
+    font-size: 12px;
+    float: left;
+}
 .words-social-comment {
     padding-top: 5px;
     width: 100%;

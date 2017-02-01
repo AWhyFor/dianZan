@@ -36,7 +36,51 @@ page {
 }
 
 .page__bd textarea {
-  height: 100px;
+  height: 80px;
+  width: 100%;
+}
+
+.pic-ul {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+}
+
+.pic-li {
+  width: 75px;
+  height: 75px;
+  margin-top: 10px;
+  display: flex;
+  border: 1px solid #ddd;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 34px;
+  color: #ddd;
+}
+.pic-li.empty {
+  border: none;
+  margin-top: 0;
+  height: 0;
+}
+.pic-li image {
+  width: 75px;
+  height: 75px;
+}
+.pic-li .del-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 75px;
+  background: rgba(30, 30, 30, 0.5);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.pic-li .del-wrap image {
+  width: 20px;
+  height: 20px;
 }
 
 .page__title {
